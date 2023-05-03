@@ -46,6 +46,9 @@ class Student {
         };
         return daysToCompleteCourses[index];
     }
+    DegreeProgram getDegreeProgram(){
+        return degreeProgram;
+    }
     void setStudentID(string _studentID){
         studentID = _studentID;
     }
