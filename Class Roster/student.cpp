@@ -11,7 +11,7 @@
 using namespace std;
 
 
-    Student::Student(string _studentID, string _firstName, string _lastName, string _email, int _age, int _daysToCompleteCourses[], DegreeProgram _degreeProgram){
+    Student::Student(string _studentID, string _firstName, string _lastName, string _email, int _age, int _daysInCourse[], DegreeProgram _degreeProgram){
         studentID = _studentID;
         firstName = _firstName;
         lastName =  _lastName;
@@ -19,7 +19,7 @@ using namespace std;
         age = _age;
         degreeProgram = _degreeProgram;
         for (int i = 0; i < 3; i++){
-            daysToCompleteCourses[i] = _daysToCompleteCourses[i];
+            daysInCourse[i] = _daysInCourse[i];
         }
         
     };
@@ -39,15 +39,15 @@ using namespace std;
         return age;
     };
     // Returns a pointer to the daysToCompleteCourses array
-    int * Student::GetDaysToCompleteCoursesPointer(){
-        return daysToCompleteCourses;
+    int * Student::GetDaysInCoursePointer(){
+        return daysInCourse;
     };
     // Returns an integer to the number of days to complete a course for a specific day
-    int Student::GetDaysToCompleteCourse(int index){
+    int Student::GetDaysInCourse(int index){
         if( index>2 || index<0 ){
             return -1;
         };
-        return daysToCompleteCourses[index];
+        return daysInCourse[index];
     };
     DegreeProgram Student::GetDegreeProgram(){
         return degreeProgram;
@@ -67,14 +67,14 @@ using namespace std;
     void Student::SetAge(int _age){
         age = _age;
     };
-    void Student::SetDaysToCompleteCourses(int _daysToCompleteCourses[]){
+    void Student::SetDaysInCourse(int _daysInCourse[]){
         for (int i = 0; i < 3; i++){
-            daysToCompleteCourses[i] = _daysToCompleteCourses[i];
+            daysInCourse[i] = _daysInCourse[i];
         }
     };
-    void Student::SetDaysToCompleteACourse(int _daysToCompleteCourse, int index){
+    void Student::SetDaysInCourse(int _daysInCourse, int index){
         if( index<=2 && index>=0 ){
-            daysToCompleteCourses[index] = _daysToCompleteCourse;
+            daysInCourse[index] = _daysInCourse;
         };
     };
     void Student::SetDegreeProgram(DegreeProgram _degreeProgram){
