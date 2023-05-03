@@ -46,6 +46,37 @@ class Student {
         };
         return daysToCompleteCourses[index];
     }
+    void setStudentID(string _studentID){
+        studentID = _studentID;
+    }
+    void setFirstName(string _firstName){
+        firstName = _firstName;
+    }
+    void setLastName(string _lastName){
+        lastName = _lastName;
+    }
+    void setEmail(string _email){
+        email = _email;
+    }
+    void setAge(int _age){
+        age = _age;
+    }
+    void setDaysToCompleteCourses(array<int, 3>& _daysToCompleteCourses){
+        for (int i = 0; i < 3; i++){
+            daysToCompleteCourses[i] = _daysToCompleteCourses[i];
+        }
+    }
+    void setDaysToCompleteACourse(int _daysToCompleteCourse, int index){
+        if( index<=2 && index>=0 ){
+            daysToCompleteCourses[index] = _daysToCompleteCourse;
+        };
+    }
+    void setDegreeProgram(DegreeProgram _degreeProgram){
+        degreeProgram = _degreeProgram;
+    }
+    
+    
+    
     
     
     
