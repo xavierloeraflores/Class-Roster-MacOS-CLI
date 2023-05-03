@@ -81,7 +81,11 @@ using namespace std;
         degreeProgram = _degreeProgram;
     };
     void Student::print(){
-        cout << "hello";
+        cout << firstName << " " << lastName << endl;
+        cout << "Student ID: " << studentID << endl;
+        cout << email << endl;
+        cout << "Age: " << age << endl;
+        cout << "Degree Program: " << degreeProgram << endl;
     };
     
     
