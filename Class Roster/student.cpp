@@ -7,21 +7,11 @@
 #include <iostream>
 #include <string>
 #include "student.h"
-#include "degree.h"
 
 using namespace std;
 
-class Student {
-    private:
-        string studentID;
-        string firstName;
-        string lastName;
-        string email;
-        int age;
-        int daysToCompleteCourses[3];
-        DegreeProgram degreeProgram;
-    public:
-    Student(string _studentID, string _firstName, string _lastName, string _email, int _age, int _daysToCompleteCourses[], DegreeProgram _degreeProgram){
+
+    Student::Student(string _studentID, string _firstName, string _lastName, string _email, int _age, int _daysToCompleteCourses[], DegreeProgram _degreeProgram){
         studentID = _studentID;
         firstName = _firstName;
         lastName =  _lastName;
@@ -32,68 +22,68 @@ class Student {
             daysToCompleteCourses[i] = _daysToCompleteCourses[i];
         }
         
-    }
-    string getStudentID(){
+    };
+    string Student::getStudentID(){
         return studentID;
-    }
-    string getFirstName(){
+    };
+    string Student::getFirstName(){
         return firstName;
-    }
-    string getLastName(){
+    };
+    string Student::getLastName(){
         return lastName;
-    }
-    string getEmail(){
+    };
+    string Student::getEmail(){
         return email;
-    }
-    int getAge(){
+    };
+    int Student::getAge(){
         return age;
-    }
+    };
     // Returns a pointer to the daysToCompleteCourses array
-    int * getDaysToCompleteCoursesPointer(){
+    int * Student::getDaysToCompleteCoursesPointer(){
         return daysToCompleteCourses;
-    }
+    };
     // Returns an integer to the number of days to complete a course for a specific day
-    int getDaysToCompleteCourse(int index){
+    int Student::getDaysToCompleteCourse(int index){
         if( index>2 || index<0 ){
             return -1;
         };
         return daysToCompleteCourses[index];
-    }
-    DegreeProgram getDegreeProgram(){
+    };
+    DegreeProgram Student::getDegreeProgram(){
         return degreeProgram;
-    }
-    void setStudentID(string _studentID){
+    };
+    void Student::setStudentID(string _studentID){
         studentID = _studentID;
-    }
-    void setFirstName(string _firstName){
+    };
+    void Student::setFirstName(string _firstName){
         firstName = _firstName;
-    }
-    void setLastName(string _lastName){
+    };
+    void Student::setLastName(string _lastName){
         lastName = _lastName;
-    }
-    void setEmail(string _email){
+    };
+    void Student::setEmail(string _email){
         email = _email;
-    }
-    void setAge(int _age){
+    };
+    void Student::setAge(int _age){
         age = _age;
-    }
-    void setDaysToCompleteCourses(int _daysToCompleteCourses[]){
+    };
+    void Student::setDaysToCompleteCourses(int _daysToCompleteCourses[]){
         for (int i = 0; i < 3; i++){
             daysToCompleteCourses[i] = _daysToCompleteCourses[i];
         }
-    }
-    void setDaysToCompleteACourse(int _daysToCompleteCourse, int index){
+    };
+    void Student::setDaysToCompleteACourse(int _daysToCompleteCourse, int index){
         if( index<=2 && index>=0 ){
             daysToCompleteCourses[index] = _daysToCompleteCourse;
         };
-    }
-    void setDegreeProgram(DegreeProgram _degreeProgram){
+    };
+    void Student::setDegreeProgram(DegreeProgram _degreeProgram){
         degreeProgram = _degreeProgram;
-    }
-    void print(){
+    };
+    void Student::print(){
         cout << "hello";
-    }
+    };
     
     
     
-};
+
