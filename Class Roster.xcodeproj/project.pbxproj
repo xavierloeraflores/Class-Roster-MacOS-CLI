@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E92C7F4C2A01695000E9B318 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92C7F4B2A01695000E9B318 /* main.cpp */; };
+		E92C7F542A024C4600E9B318 /* student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92C7F522A024C4600E9B318 /* student.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		E92C7F482A01695000E9B318 /* Class Roster */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Class Roster"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92C7F4B2A01695000E9B318 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E92C7F522A024C4600E9B318 /* student.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = student.cpp; sourceTree = "<group>"; };
+		E92C7F552A024E7200E9B318 /* student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				E92C7F4B2A01695000E9B318 /* main.cpp */,
+				E92C7F522A024C4600E9B318 /* student.cpp */,
+				E92C7F552A024E7200E9B318 /* student.h */,
 			);
 			path = "Class Roster";
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92C7F4C2A01695000E9B318 /* main.cpp in Sources */,
+				E92C7F542A024C4600E9B318 /* student.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
