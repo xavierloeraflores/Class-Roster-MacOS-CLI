@@ -20,6 +20,18 @@ class Student {
         int daysToCompleteCourses[3];
         DegreeProgram degreeProgram;
     public:
+    Student(string _studentID, string _firstName, string _lastName, string _email, int _age, array<int, 3>& _daysToCompleteCourses, DegreeProgram _degreeProgram){
+        studentID = _studentID;
+        firstName = _firstName;
+        lastName =  _lastName;
+        email = _email;
+        age = _age;
+        degreeProgram = _degreeProgram;
+        for (int i = 0; i < 3; i++){
+            daysToCompleteCourses[i] = _daysToCompleteCourses[i];
+        }
+        
+    }
     string getStudentID(){
         return studentID;
     }
@@ -77,7 +89,6 @@ class Student {
     void setDegreeProgram(DegreeProgram _degreeProgram){
         degreeProgram = _degreeProgram;
     }
-    
     
     
     
