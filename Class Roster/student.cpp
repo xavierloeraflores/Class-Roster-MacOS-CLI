@@ -4,6 +4,7 @@
 //
 //  Created by Xavier Loera Flores on 5/3/23.
 //
+#include <iostream>
 #include <string>
 #include "student.h"
 #include "degree.h"
@@ -20,7 +21,7 @@ class Student {
         int daysToCompleteCourses[3];
         DegreeProgram degreeProgram;
     public:
-    Student(string _studentID, string _firstName, string _lastName, string _email, int _age, array<int, 3>& _daysToCompleteCourses, DegreeProgram _degreeProgram){
+    Student(string _studentID, string _firstName, string _lastName, string _email, int _age, int _daysToCompleteCourses[], DegreeProgram _degreeProgram){
         studentID = _studentID;
         firstName = _firstName;
         lastName =  _lastName;
@@ -76,7 +77,7 @@ class Student {
     void setAge(int _age){
         age = _age;
     }
-    void setDaysToCompleteCourses(array<int, 3>& _daysToCompleteCourses){
+    void setDaysToCompleteCourses(int _daysToCompleteCourses[]){
         for (int i = 0; i < 3; i++){
             daysToCompleteCourses[i] = _daysToCompleteCourses[i];
         }
@@ -89,9 +90,9 @@ class Student {
     void setDegreeProgram(DegreeProgram _degreeProgram){
         degreeProgram = _degreeProgram;
     }
-    
-    
-    
+    void print(){
+        cout << "hello";
+    }
     
     
     
