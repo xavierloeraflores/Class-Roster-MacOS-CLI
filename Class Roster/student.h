@@ -22,22 +22,22 @@ class Student {
         DegreeProgram degreeProgram;
     public:
         Student(string _studentID, string _firstName, string _lastName, string _email, int _age, int _daysToCompleteCourses[], DegreeProgram _degreeProgram);
-        string getStudentID();
-        string getFirstName();
-        string getLastName();
-        string getEmail();
-        int getAge();
-        int * getDaysToCompleteCoursesPointer();
-        int getDaysToCompleteCourse(int index);
-        DegreeProgram getDegreeProgram();
-        void setStudentID(string _studentID);
-        void setFirstName(string _firstName);
-        void setLastName(string _lastName);
-        void setEmail(string _email);
-        void setAge(int _age);
-        void setDaysToCompleteCourses(int _daysToCompleteCourses[]);
-        void setDaysToCompleteACourse(int _daysToCompleteCourse, int index);
-        void setDegreeProgram(DegreeProgram _degreeProgram);
+        string GetStudentID();
+        string GetFirstName();
+        string GetLastName();
+        string GetEmailAddress();
+        int GetAge();
+        int * GetDaysToCompleteCoursesPointer();
+        int GetDaysToCompleteCourse(int index);
+        DegreeProgram GetDegreeProgram();
+        void SetStudentID(string _studentID);
+        void SetFirstName(string _firstName);
+        void SetLastName(string _lastName);
+        void SetEmailAddress(string _email);
+        void SetAge(int _age);
+        void SetDaysToCompleteCourses(int _daysToCompleteCourses[]);
+        void SetDaysToCompleteACourse(int _daysToCompleteCourse, int index);
+        void SetDegreeProgram(DegreeProgram _degreeProgram);
         void print();
 };
 #endif
