@@ -11,12 +11,13 @@
 using namespace std;
 
 class Student {
-private:
-    string studentID;
-    string firstName;
-    string lastName;
-    string email;
-    int age;
-    int daysToCompleteCourse[3];
-    DegreeProgram degreeProgram;
+    private:
+        string studentID;
+        string firstName;
+        string lastName;
+        string email;
+        int age;
+        int daysToCompleteCourse[3];
+        DegreeProgram degreeProgram;
+    
 };
