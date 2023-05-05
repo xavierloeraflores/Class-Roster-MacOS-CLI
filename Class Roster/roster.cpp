@@ -191,15 +191,24 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 
 void Roster::remove(string studentID){
     bool found = false;
-    
+    cout << "Removing" << studentID << endl;
     for (int i = 0; i < 5; i ++){
         string _studentID = classRosterArray[i] -> GetStudentID();
+        cout << studentID << "->" << _studentID << endl;
         if(_studentID == studentID){
             found = true;
+            cout << "found"<<endl;
             delete classRosterArray[i];
+            classRosterArray[i] = nullptr;
+            for (int j = i; j < 4; ++j){
+                classRosterArray[j] = classRosterArray[j + 1];
+            }
         }
     }
-    
+    if(found){
+        classRosterArray[4] = nullptr;
+    }
+    printAll();
     
     
     if(!found){
@@ -209,8 +218,15 @@ void Roster::remove(string studentID){
 }
 
 void Roster::printAll(){
+    cout << "printing all";
     for(int i = 0; i < 5; i++){
-        classRosterArray[i] -> print();
+        if(classRosterArray[i] != nullptr){
+            classRosterArray[i] -> print();
+        }
+        else{
+            cout << "---------" << classRosterArray[i] << "---------"<< endl;
+        }
+        
     }
 }
 
