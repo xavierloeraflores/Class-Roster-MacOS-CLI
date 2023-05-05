@@ -16,86 +16,91 @@ using namespace std;
 Roster::Roster(){
     
 }
+Roster::~Roster(){
+    cout << "Roster Destructor" << endl;
+}
 
 
-void Roster::parse(string studentData){
-    string studentString = studentData;
-    size_t leftPos = 0;
-    size_t rightPos = 1;
-    size_t difference = rightPos - leftPos;
-    
-    
-    //Parse studentID
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    string studentID = studentString.substr(leftPos, difference);
-    
-    //Parse firstName
-    leftPos = rightPos+1;
-    
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    string firstName = studentString.substr(leftPos, difference);
-     
-    
-    
-    //Parse lastName
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    string lastName = studentString.substr(leftPos, difference);
-    
-    
-    
-    //Parse email
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    string email = studentString.substr(leftPos, difference);
-    
-    
-    //Parse age
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    int age = stoi(studentString.substr(leftPos, difference));
-    
-    
-    //Parse daysInCourse1
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    int daysInCourse1 = stoi(studentString.substr(leftPos, difference));
-    
-    //Parse daysInCourse2
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    int daysInCourse2 = stoi(studentString.substr(leftPos, difference));
-    
-    //Parse daysInCourse3
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    int daysInCourse3 = stoi(studentString.substr(leftPos, difference));
-    
-    
-    //Parse degreeProgram
-    leftPos = rightPos+1;
-    rightPos = studentString.find(',', leftPos);
-    difference = rightPos - leftPos;
-    string degreeProgramString = studentString.substr(leftPos, difference);
-    DegreeProgram degreeProgram;
-    if (degreeProgramString == "SOFTWARE") {
-        degreeProgram = SOFTWARE;
-    }else if (degreeProgramString == "SECURITY"){
-        degreeProgram = SECURITY;
-    }else if (degreeProgramString == "NETWORK"){
-        degreeProgram = NETWORK;
-    }else{
-        degreeProgram = SOFTWARE;
+void Roster::parse(const string* studentData){
+    for(int i = 0; i < 5; i++){
+        string studentString = studentData[i];
+        size_t leftPos = 0;
+        size_t rightPos = 1;
+        size_t difference = rightPos - leftPos;
+        
+        
+        //Parse studentID
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        string studentID = studentString.substr(leftPos, difference);
+        
+        //Parse firstName
+        leftPos = rightPos+1;
+        
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        string firstName = studentString.substr(leftPos, difference);
+        
+        
+        
+        //Parse lastName
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        string lastName = studentString.substr(leftPos, difference);
+        
+        
+        
+        //Parse email
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        string email = studentString.substr(leftPos, difference);
+        
+        
+        //Parse age
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        int age = stoi(studentString.substr(leftPos, difference));
+        
+        
+        //Parse daysInCourse1
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        int daysInCourse1 = stoi(studentString.substr(leftPos, difference));
+        
+        //Parse daysInCourse2
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        int daysInCourse2 = stoi(studentString.substr(leftPos, difference));
+        
+        //Parse daysInCourse3
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        int daysInCourse3 = stoi(studentString.substr(leftPos, difference));
+        
+        
+        //Parse degreeProgram
+        leftPos = rightPos+1;
+        rightPos = studentString.find(',', leftPos);
+        difference = rightPos - leftPos;
+        string degreeProgramString = studentString.substr(leftPos, difference);
+        DegreeProgram degreeProgram;
+        if (degreeProgramString == "SOFTWARE") {
+            degreeProgram = SOFTWARE;
+        }else if (degreeProgramString == "SECURITY"){
+            degreeProgram = SECURITY;
+        }else if (degreeProgramString == "NETWORK"){
+            degreeProgram = NETWORK;
+        }else{
+            degreeProgram = SOFTWARE;
+        }
+        add(studentID, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
     }
-    add(studentID, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
 }
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){

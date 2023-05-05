@@ -28,7 +28,8 @@ int main(int argc, const char * argv[]) {
     
     
     
-    Roster classRoster(studentData);
+    Roster classRoster;
+    classRoster.parse(studentData);
     
     classRoster.printAll();
     classRoster.printInvalidEmails();
