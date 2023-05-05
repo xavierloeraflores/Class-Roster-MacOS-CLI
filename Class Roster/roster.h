@@ -16,7 +16,7 @@ class Roster {
     private:
 //        Student *classRosterArray[5];  
     public:
-        Student *classRosterArray[5];
+        Student *classRosterArray[5] = {nullptr};
         Roster ();
         Roster (const string* studentData);
         void parse(string studentData);

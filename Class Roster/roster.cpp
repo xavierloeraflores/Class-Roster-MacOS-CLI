@@ -109,7 +109,6 @@ void Roster::parse(string studentData){
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     string firstName = studentString.substr(leftPos, difference);
-    cout << firstName <<endl;
      
     
     
@@ -118,7 +117,6 @@ void Roster::parse(string studentData){
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     string lastName = studentString.substr(leftPos, difference);
-    cout << lastName <<endl;
     
     
     
@@ -127,7 +125,6 @@ void Roster::parse(string studentData){
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     string email = studentString.substr(leftPos, difference);
-    cout <<  email <<endl;
     
     
     //Parse age
@@ -135,7 +132,6 @@ void Roster::parse(string studentData){
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     int age = stoi(studentString.substr(leftPos, difference));
-    cout << age <<endl;
     
     
     //Parse daysInCourse1
@@ -143,21 +139,18 @@ void Roster::parse(string studentData){
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     int daysInCourse1 = stoi(studentString.substr(leftPos, difference));
-    cout << daysInCourse1 <<endl;
     
     //Parse daysInCourse2
     leftPos = rightPos+1;
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     int daysInCourse2 = stoi(studentString.substr(leftPos, difference));
-    cout << daysInCourse2 <<endl;
     
     //Parse daysInCourse3
     leftPos = rightPos+1;
     rightPos = studentString.find(',', leftPos);
     difference = rightPos - leftPos;
     int daysInCourse3 = stoi(studentString.substr(leftPos, difference));
-    cout << daysInCourse3 <<endl;
     
     
     //Parse degreeProgram
@@ -179,9 +172,42 @@ void Roster::parse(string studentData){
 }
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
-    
+    cout << "****************" << endl;
+    cout << "****************" << endl;
+    cout << firstName << endl;
     int daysInCourse[3] = { daysInCourse1, daysInCourse2, daysInCourse3 };
-    Student student(studentID, firstName, lastName,  emailAddress, age, daysInCourse,degreeProgram);
+    Student *student = new Student(studentID, firstName, lastName,  emailAddress, age, daysInCourse,degreeProgram);
+//    student.print();
+    cout << "---------------" << endl;
+    for(int j = 0; j<5; j++){
+        if(classRosterArray[j] == nullptr){
+            cout << j << "............." << endl;
+        }
+        else{
+            cout << j <<classRosterArray[j] -> GetFirstName() << endl;
+        }
+    }
+    
+    
+    
+    cout << "\\\\\\\\\\\\\\\\" << endl;
+    int i = 0;
+    bool setStudent = false;
+    while(!setStudent && i<5){
+        if(classRosterArray[i] == nullptr){
+            cout << "NULLLLL" << i << endl;
+            classRosterArray[i] = student;
+            setStudent = true;
+        }
+        else{
+            cout << "!!!!!!!!!!" << i << endl;
+            cout << i <<classRosterArray[i] -> GetFirstName() << endl;
+            i++;
+        }
+    }
+    cout << "xxxxx" << i <<classRosterArray[i] -> GetFirstName() << endl;
+    
+    
     
 };
 
