@@ -18,6 +18,9 @@ Roster::Roster(){
 }
 Roster::~Roster(){
     cout << "Roster Destructor" << endl;
+    for(int i = 0; i < 5; i++){
+        delete classRosterArray[i];
+    }
 }
 
 
