@@ -250,7 +250,25 @@ void Roster::printAverageDaysInCourse(string studentID){
 }
 
 void Roster::printInvalidEmails(){
-    
+    cout << "Invalid Emails: " << endl;
+    for(int i = 0; i < 5; i++){
+        string email = classRosterArray[i] -> GetEmailAddress();
+        bool invalid = false;
+        if(email.find(" ")){
+            invalid = true;
+        }
+        if (!email.find(".")){
+            invalid = true;
+        }
+        if(!email.find("@")){
+            invalid = true;
+        }
+        
+        
+        if (invalid ){
+            cout << email<< endl;;
+        }
+    }
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram){
