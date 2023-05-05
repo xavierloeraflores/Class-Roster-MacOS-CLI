@@ -8,10 +8,14 @@
 #include <iostream>
 #include "roster.h"
 
+using namespace std;
+
 int main(int argc, const char * argv[]) {
     
-    std::cout << "Class" << endl << "C++" << endl;
-    std::cout << "ID" << endl << "Xavier Loera Flores" << endl;
+    cout << "Scripting and Programming - Applications - C867" <<endl;
+    cout << "C++" << endl;
+    cout << "011037676" << endl;
+    cout << "Xavier Loera Flores" << endl;
 
     
     const string studentData[] = {
@@ -25,6 +29,20 @@ int main(int argc, const char * argv[]) {
     
     
     Roster classRoster(studentData);
+    
+    classRoster.printAll();
+    classRoster.printInvalidEmails();
+    
+    //loop through classRosterArray and for each element:
+    for(int i = 0; i<5; i++){
+        string studentID = classRoster.classRosterArray[i] ->GetStudentID();
+        classRoster.printAverageDaysInCourse(studentID);
+    }
+    
+    classRoster.printByDegreeProgram(SOFTWARE);
+    classRoster.remove("A3");
+    classRoster.printAll();
+    classRoster.remove("A3");
     
     
     

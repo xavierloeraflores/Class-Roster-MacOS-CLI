@@ -191,40 +191,39 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 
 void Roster::remove(string studentID){
     bool found = false;
-    cout << "Removing" << studentID << endl;
+    cout << "A call has been made to remove(): " << studentID << endl;
     for (int i = 0; i < 5; i ++){
-        string _studentID = classRosterArray[i] -> GetStudentID();
-        cout << studentID << "->" << _studentID << endl;
-        if(_studentID == studentID){
-            found = true;
-            cout << "found"<<endl;
-            delete classRosterArray[i];
-            classRosterArray[i] = nullptr;
-            for (int j = i; j < 4; ++j){
-                classRosterArray[j] = classRosterArray[j + 1];
+        if(classRosterArray[i]!=nullptr){
+            string _studentID = classRosterArray[i] -> GetStudentID();
+            if(_studentID == studentID){
+                found = true;
+                cout << "Found & Removing"<< studentID<<endl;
+                delete classRosterArray[i];
+                classRosterArray[i] = nullptr;
+                for (int j = i; j < 4; ++j){
+                    classRosterArray[j] = classRosterArray[j + 1];
+                }
             }
         }
     }
     if(found){
         classRosterArray[4] = nullptr;
     }
-    printAll();
-    
     
     if(!found){
-        cout << "Error: Student with studentID:" << studentID << " not found.";
+        cout << "Error: Student with studentID:" << studentID << " not found." << endl;;
     }
     
 }
 
 void Roster::printAll(){
-    cout << "printing all";
+    cout << "A call to the printAll() function has been made"<<endl;;
     for(int i = 0; i < 5; i++){
         if(classRosterArray[i] != nullptr){
             classRosterArray[i] -> print();
         }
         else{
-            cout << "---------" << classRosterArray[i] << "---------"<< endl;
+            cout << "Null Pointer in classRosterArray at index:" << classRosterArray[i] <<""<< endl;
         }
         
     }
@@ -263,7 +262,6 @@ void Roster::printInvalidEmails(){
         if(!email.find("@")){
             invalid = true;
         }
-        
         
         if (invalid ){
             cout << email<< endl;;
