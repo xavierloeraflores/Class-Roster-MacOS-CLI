@@ -18,7 +18,6 @@ class Roster {
     public:
         Student *classRosterArray[5] = {nullptr};
         Roster ();
-        Roster (const string* studentData);
         void parse(string studentData);
         void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
         void remove(string studentID);
