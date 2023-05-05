@@ -81,11 +81,25 @@ using namespace std;
         degreeProgram = _degreeProgram;
     };
     void Student::print(){
+        cout << "A call to the print() function has been made." << endl;
         cout << firstName << " " << lastName << endl;
         cout << "Student ID: " << studentID << endl;
         cout << email << endl;
         cout << "Age: " << age << endl;
-        cout << "Degree Program: " << degreeProgram << endl;
+        if (degreeProgram == SOFTWARE){
+            cout << "Degree Program: SOFTWARE" << endl;
+        }else if(degreeProgram == NETWORK){
+            cout << "Degree Program: NETWORK" << endl;
+        }else if ( degreeProgram == SECURITY){
+            cout << "Degree Program: SECURITY" << endl;
+        }else{
+            cout << "Degree Program: None" << endl;
+        }
+        
+        cout << "Days in Course 1: " << GetDaysInCourse(0) << endl;
+        cout << "Days in Course 2: " << GetDaysInCourse(1) << endl;
+        cout << "Days in Course 3: " << GetDaysInCourse(2) << endl;
+        
     };
     
     
