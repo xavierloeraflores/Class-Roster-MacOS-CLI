@@ -14,9 +14,12 @@ using namespace std;
 
 class Roster {
     private:
-        Student *classRosterArray[5];
+//        Student *classRosterArray[5];  
     public:
-        Roster (string studentData[]);
+        Student *classRosterArray[5];
+        Roster ();
+        Roster (const string* studentData);
+        void parse(string studentData);
         void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
         void remove(string studentID);
         void printAll();
