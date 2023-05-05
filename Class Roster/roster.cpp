@@ -172,42 +172,20 @@ void Roster::parse(string studentData){
 }
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
-    cout << "****************" << endl;
-    cout << "****************" << endl;
-    cout << firstName << endl;
     int daysInCourse[3] = { daysInCourse1, daysInCourse2, daysInCourse3 };
     Student *student = new Student(studentID, firstName, lastName,  emailAddress, age, daysInCourse,degreeProgram);
-//    student.print();
-    cout << "---------------" << endl;
-    for(int j = 0; j<5; j++){
-        if(classRosterArray[j] == nullptr){
-            cout << j << "............." << endl;
-        }
-        else{
-            cout << j <<classRosterArray[j] -> GetFirstName() << endl;
-        }
-    }
     
-    
-    
-    cout << "\\\\\\\\\\\\\\\\" << endl;
     int i = 0;
     bool setStudent = false;
     while(!setStudent && i<5){
         if(classRosterArray[i] == nullptr){
-            cout << "NULLLLL" << i << endl;
             classRosterArray[i] = student;
             setStudent = true;
         }
         else{
-            cout << "!!!!!!!!!!" << i << endl;
-            cout << i <<classRosterArray[i] -> GetFirstName() << endl;
             i++;
         }
     }
-    cout << "xxxxx" << i <<classRosterArray[i] -> GetFirstName() << endl;
-    
-    
     
 };
 
