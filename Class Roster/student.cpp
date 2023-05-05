@@ -38,11 +38,9 @@ using namespace std;
     int Student::GetAge(){
         return age;
     };
-    // Returns a pointer to the daysToCompleteCourses array
     int * Student::GetDaysInCoursePointer(){
         return daysInCourse;
     };
-    // Returns an integer to the number of days to complete a course for a specific day
     int Student::GetDaysInCourse(int index){
         if( index>2 || index<0 ){
             return -1;
@@ -81,11 +79,8 @@ using namespace std;
         degreeProgram = _degreeProgram;
     };
     void Student::print(){
-        cout << "A call to the print() function has been made." << endl;
-        cout << firstName << " " << lastName << endl;
-        cout << "Student ID: " << studentID << endl;
-        cout << email << endl;
-        cout << "Age: " << age << endl;
+        cout << studentID << "\tFirst Name: "<< firstName<<"\tLast Name: " << lastName <<"\t\tAge: "<< age << "\t";
+        cout <<"daysInCourse: " <<"{"<<daysInCourse[0]<<"," <<daysInCourse[1] << ","<<daysInCourse[2]<<"} \t";
         if (degreeProgram == SOFTWARE){
             cout << "Degree Program: SOFTWARE" << endl;
         }else if(degreeProgram == NETWORK){
@@ -95,10 +90,6 @@ using namespace std;
         }else{
             cout << "Degree Program: None" << endl;
         }
-        
-        cout << "Days in Course 1: " << GetDaysInCourse(0) << endl;
-        cout << "Days in Course 2: " << GetDaysInCourse(1) << endl;
-        cout << "Days in Course 3: " << GetDaysInCourse(2) << endl;
         
     };
     

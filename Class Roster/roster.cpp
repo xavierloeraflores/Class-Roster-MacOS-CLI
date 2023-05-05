@@ -132,7 +132,7 @@ void Roster::remove(string studentID){
             string _studentID = classRosterArray[i] -> GetStudentID();
             if(_studentID == studentID){
                 found = true;
-                cout << "Found & Removing"<< studentID<<endl;
+                cout << "Found & Removing: "<< studentID<<endl;
                 delete classRosterArray[i];
                 classRosterArray[i] = nullptr;
                 for (int j = i; j < 4; ++j){
@@ -158,7 +158,7 @@ void Roster::printAll(){
             classRosterArray[i] -> print();
         }
         else{
-            cout << "Null Pointer in classRosterArray at index:" << classRosterArray[i] <<""<< endl;
+            cout << "Null Pointer in classRosterArray at index:" << i <<""<< endl;
         }
         
     }
@@ -180,7 +180,7 @@ void Roster::printAverageDaysInCourse(string studentID){
         cout << -1;
     }
     double solution = sum / 3.0;
-    cout << solution;
+    cout << studentID << " Average: " <<solution<<endl;
 }
 
 void Roster::printInvalidEmails(){
